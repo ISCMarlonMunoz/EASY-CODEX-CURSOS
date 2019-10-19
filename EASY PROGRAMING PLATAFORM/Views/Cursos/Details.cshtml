@@ -1,0 +1,31 @@
+﻿@model EASY_PROGRAMING_PLATAFORM.Models.Cursos
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Cursos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lenguaje_programacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lenguaje_programacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_curso">Editar</a> |
+    <a asp-action="Index">Regresar a la Lista</a>
+</div>

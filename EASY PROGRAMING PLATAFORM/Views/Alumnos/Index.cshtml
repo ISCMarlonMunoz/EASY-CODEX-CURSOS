@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EASY_PROGRAMING_PLATAFORM.Models.Alumnos>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Alumnos</h2>
+<br /> <br />
+<p>
+    <a asp-action="Create">Agregar Nuevo Alumno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correo_electronico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td></td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.correo_electronico)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.Id_alumno">Editar</a> |
+        <a asp-action="Details" asp-route-id="@item.Id_alumno">Detalles</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id_alumno">Eliminar</a>
+    </td>
+</tr>
+}
+    </tbody>
+</table>

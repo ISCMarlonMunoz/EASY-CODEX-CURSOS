@@ -1,0 +1,44 @@
+﻿@model IEnumerable<EASY_PROGRAMING_PLATAFORM.Models.Profesores>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<br /> <br />
+<p>
+    <a asp-action="Create">Agregar Nuevo Profesor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.especialidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.especialidad)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_profesor">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_profesor">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_profesor">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EASY_PROGRAMING_PLATAFORM.Models.Etapas>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Etapas</h2>
+<br /> <br />
+<p>
+    <a asp-action="Create">Agregar Nueva Etapa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.nivel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nivel)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id_etapa">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id_etapa">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id_etapa">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

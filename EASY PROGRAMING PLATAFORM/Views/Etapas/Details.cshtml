@@ -1,0 +1,25 @@
+﻿@model EASY_PROGRAMING_PLATAFORM.Models.Etapas
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Etapas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nivel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nivel)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_etapa">Editar</a> |
+    <a asp-action="Index">Regresar a la Lista</a>
+</div>
