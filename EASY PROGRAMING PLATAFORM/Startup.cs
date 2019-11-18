@@ -11,6 +11,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using EASY_PROGRAMING_PLATAFORM.Models;
+using Microsoft.AspNetCore.Identity;
+
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+
+
+
+
 
 namespace EASY_PROGRAMING_PLATAFORM
 {
@@ -38,6 +46,8 @@ namespace EASY_PROGRAMING_PLATAFORM
 
             services.AddDbContext<EASY_PROGRAMING_PLATAFORMContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("EASY_PROGRAMING_PLATAFORMContext")));
+
+            services.AddAuthentication();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +65,7 @@ namespace EASY_PROGRAMING_PLATAFORM
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
