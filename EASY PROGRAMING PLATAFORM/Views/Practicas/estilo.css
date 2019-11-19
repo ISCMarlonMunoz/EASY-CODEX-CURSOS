@@ -1,0 +1,51 @@
+body{
+  font-family: Arial;
+
+}
+
+#main-container{
+  margin: 120px auto;
+  width: 650px;
+
+}
+
+table{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-collapse: collapse;
+  text-align: left;
+
+
+}
+
+.imagen{
+  border-radius: 40px;
+}
+
+th, td {
+  padding: 20px;
+  text-align: center;
+
+}
+
+thead{
+  background-color: #1ABC9C;
+  border-bottom: solid 5px #138D75;
+  color: white;
+
+}
+
+tr:nth-child(even){
+  background-color: #ddd;
+
+}
+
+tr:hover td{
+
+  background-color: #76D7C4;
+
+}
+
+img{
+
+}
